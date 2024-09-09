@@ -1,0 +1,40 @@
+
+.navbar {
+  background-color: #131722;
+}
+@media (max-width:767px) {
+  .navbar-nav {
+    border-bottom: 1px solid #6c757d;
+  }
+}
+.logo-image {
+  max-width: 20%;
+}
+@media (max-width:767px) {
+  .logo-image {
+    max-width: 30%;
+  }
+}
+.navbar .nav-link {
+  color: white;
+}
+@media (max-width:767px) {
+  .navbar .nav-link {
+    font-size: 14px !important;
+  }
+}
+.nav-link.active {
+  font-weight: bold;
+  color: #fff; /* Or whatever your active state should look like */
+}
+@media (max-width:767px) {
+  .navbar-toggler {
+    font-size: 12px !important;
+  }
+}
+@media (max-width:992px) {
+  .navbar-toggler {
+    font-size: 14px !important;
+  }
+}
+

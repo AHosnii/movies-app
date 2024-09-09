@@ -1,0 +1,53 @@
+
+<!-- <div class="py-5">
+  <input [(ngModel)]="term" class="form-control w-75 m-auto">
+</div>
+
+<div class="row">
+  <div class="col-md-4 py-4">
+    <div class="brdr w-25"></div>
+      <h2 class="text-white py-3">Popular Movies <br> Right Now</h2>
+      <p class="text-muted">Most Trending Movies This Month</p>
+    <div class="brdr"></div>
+  </div>
+  <div *ngFor="let movie of movies|searchTitle:term; let i = index" class="col-md-2 my-2 position-relative">
+    <div class="movie text-white user-select-all">
+      <a class="text-white" [routerLink]='["/moviesdetails", movie.id]'>
+      <img class="img-fluid" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="">
+      <h6 class=" my-2 text-center">{{movie.title}}</h6>
+      <div class="vote">{{movie.vote_average.toFixed(1)}}</div>
+      <p class="pe-auto"><span class="text-danger">OverView : </span>{{movie.overview | seemore:60}}<span class="text-muted"> ...seemore </span> </p>
+    </a>
+    </div>
+  </div>
+</div>
+<div class="d-flex  align-items-center justify-content-center py-5 ">
+  <i class="fa fa-arrow-circle-left fa-2x text-white pointer" aria-hidden="true" (click)="prev()"></i>
+  <div class="text-danger pointer p-3 " *ngFor="let pageNumber of pageNumbers" (click)="changePage(pageNumber)">{{pageNumber}}</div>
+  <i class="fa fa-arrow-circle-right fa-2x text-white pointer" aria-hidden="true" (click)="next()"></i>
+</div> -->
+
+<div class="py-5">
+  <input [(ngModel)]="term" class="form-control w-75 m-auto">
+</div>
+
+<div class="row">
+  <div class="col-md-4 py-4">
+    <div class="brdr w-25"></div>
+    <h2 class="text-white py-3">Popular Movies <br> Right Now</h2>
+    <p class="text-muted">Most Trending Movies This Month</p>
+    <div class="brdr"></div>
+  </div>
+  <div *ngFor="let movie of movies | searchTitle:term | paginate: { itemsPerPage: 10, currentPage: currentPage }" class="col-md-4 col-lg-2 my-2 position-relative">
+    <div class="movie text-white user-select-all">
+      <a class="text-white" [routerLink]='["/moviesdetails", movie.id]'>
+        <img class="img-fluid" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" alt="">
+        <h6 class=" my-2 text-center">{{movie.title}}</h6>
+        <div class="vote">{{movie.vote_average.toFixed(1)}}</div>
+        <p class="pe-auto"><span class="text-danger">OverView : </span>{{movie.overview | seemore:60}}<span class="text-muted"> ...seemore </span> </p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<pagination-controls class="text-center text-white " (pageChange)="changePage($event)"></pagination-controls>

@@ -1,0 +1,59 @@
+<!-- <div class="py-5">
+  <input [(ngModel)]="term" class="form-control w-50 m-auto">
+</div>
+<div class="row">
+  <div class="col-md-4 py-4">
+    <div class="brdr w-25"></div>
+    <h2 class="text-white py-3">Popular Tv <br> Right Now</h2>
+    <p class="text-muted">Most Trending Tvs This Month</p>
+    <div class="brdr"></div>
+  </div>
+  <div *ngFor="let tv of tvs|searchName:term" class="col-md-2 my-2 position-relative">
+    <div class="movie">
+      <a class="text-white" [routerLink]='["/tvdetails", tv.id]'>
+      <img class="img-fluid" src="https://image.tmdb.org/t/p/w500{{tv.poster_path}}" alt="">
+      <h6 class="text-white my-2">{{tv.name}}</h6>
+      <div class="vote">{{tv.vote_average.toFixed(1)}}</div>
+      <p class="pe-auto"><span class="text-danger">OverView : </span>{{tv.overview | seemore:60}}<span class="text-muted">...seemore </span> </p>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="w-50 d-flex mx-auto py-5 my-5">
+  <i class="fa fa-arrow-circle-left text-white pointer fa-2x" aria-hidden="true" (click)="prev()"></i>
+  <div class="text-white pointer p-3" *ngFor="let pageNumber of pageNumbers" (click)="changePage(pageNumber)" >{{pageNumber}}</div>
+  <i class="fa fa-arrow-circle-right text-white pointer fa-2x" aria-hidden="true"(click)="next()"></i>
+</div> -->
+<div class="py-5">
+  <input [(ngModel)]="term" class="form-control w-75 m-auto">
+</div>
+<div class="row">
+  <div class="col-md-4 py-4">
+    <div class="brdr w-25"></div>
+    <h2 class="text-white py-3">Popular TV Shows <br> Right Now</h2>
+    <p class="text-muted">Most Trending TV Shows This Month</p>
+    <div class="brdr"></div>
+  </div>
+  <div *ngFor="let tv of tvs | searchName:term | paginate: {  itemsPerPage: 10, currentPage: currentPage }" class="col-md-4 col-lg-2 my-2 position-relative">
+    <div class="movie">
+      <a class="text-white" [routerLink]='["/tvdetails", tv.id]'>
+      <img class="img-fluid" src="https://image.tmdb.org/t/p/w500{{tv.poster_path}}" alt="">
+      <h6 class="text-white my-2">{{tv.name}}</h6>
+      <div class="vote">{{tv.vote_average.toFixed(1)}}</div>
+      <p class="pe-auto"><span class="text-danger">Overview: </span>{{tv.overview | seemore:60}}<span class="text-muted">...seemore </span> </p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<pagination-controls class=" pag text-white text-center d-flex justify-content-center" (pageChange)="changePage($event)"></pagination-controls>
+<!-- <pagination-controls
+  class="pag text-white text-center d-flex justify-content-center"
+  [id]="'tvs'"
+  itemsPerPage="12"
+  totalItems= "totalItems"
+  [(ngModel)]="currentPage"
+  (pageChange)="changePage($event)">
+</pagination-controls> -->
+
+

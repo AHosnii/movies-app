@@ -1,0 +1,43 @@
+$fontFamily: 'Montserrat', sans-serif;
+$borderHeight:1px;
+$mainWidth:400px;
+$fontSize:16px;
+$fontColor:#fff;
+$secondFontColor:#949cb0;
+$bgColor:#131722;
+$bgTransparent:rgba(36,186,239,.6);
+$lightBgColor:#24baef;
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+
+body
+{
+  background-color: $bgColor;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+}
+a
+{
+  color: $fontColor;
+  text-decoration: none;
+}
+ul.ngx-pagination {
+  padding-left: 0;
+}
+.vote {
+  color: $fontColor;
+  background-color: $lightBgColor;
+  padding: 8px;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+.brdr {
+  background-color: $borderColor;
+  height: $borderHeight;
+}
+.pointer {
+  cursor: pointer;
+}
+

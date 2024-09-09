@@ -1,0 +1,36 @@
+
+<form [formGroup]="contactsForm" (ngSubmit)="saveForm()">
+  <div class="form-group">
+    <label class="text-white mb-2">Client-Name :</label>
+    <input formControlName="clientName" class="form-control mb-2" placeholder="Name Between 3 And 8 Letter">
+    <div class="border border-danger p-2 m-2" *ngIf="contactsForm.controls.clientName.errors !=null && contactsForm.controls.clientName.touched">
+      <div class="text-danger">Client-Name Note Valid</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="text-white mb-2">Client-Age :</label>
+    <input formControlName="clientAge" class="form-control mb-2" placeholder="Age Between 10 And 35 Years">
+    <div class="border border-danger p-2 m-2" *ngIf="contactsForm.controls.clientAge.errors !=null && contactsForm.controls.clientAge.touched">
+      <div class="text-danger">Client-Age Note Valid</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="text-white mb-2">Client-Mail :</label>
+    <input formControlName="clientMail" class="form-control mb-2" placeholder="Enter Your Mail">
+    <div class="border border-danger p-2 m-2" *ngIf="contactsForm.controls.clientMail.errors !=null && contactsForm.controls.clientMail.touched">
+      <div class="text-danger">Client-Mail Note Valid</div>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <label class="text-white mb-2">Message Title</label>
+    <input formControlName="messageTitle" class="form-control mb-2" placeholder="messageTitle Between 3 And 8 Letter">
+    <div class="border border-danger p-2 m-2">
+      <div class="text-danger">Message-Title Note Valid</div>
+    </div>
+  </div> -->
+  <div class="form-group">
+    <label class="text-white mb-2">Message Title :</label>
+    <textarea formControlName="messageBody" class="form-control mb-2 " style="height: 150px;" placeholder="Enter Your Message"></textarea>
+  </div>
+  <button [disabled]="!contactsForm.valid" class="btn btn-info " type="submit">SEND</button>
+</form>

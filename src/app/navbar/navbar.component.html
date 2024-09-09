@@ -1,0 +1,98 @@
+
+<!-- <nav class="py-3">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <img class="img-fluid" src="assets/images/logo.png" alt="">
+    </div>
+    <div class="col-md-8 ">
+      <ul class="list-unstyled d-flex justify-content-around">
+        <li>
+          <a  routerLink="home">HOME</a>
+        </li>
+        <li>
+          <a  routerLink="movies">MOVIES</a>
+        </li>
+        <li>
+          <a  routerLink="tv">TV</a>
+        </li>
+        <li>
+          <a  routerLink="people">PEOPLE</a>
+        </li>
+        <li>
+          <a  routerLink="about">ABOUT</a>
+        </li>
+        <li>
+          <a  routerLink="contact">CONTACTS</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-2 text-white d-flex justify-content-around">
+      <i class="fab fa-facebook" ></i>
+      <i class="fab fa-twitter" ></i>
+      <i class="fab fa-instagram" ></i>
+      <i class="fab fa-youtube" ></i>
+    </div>
+  </div>
+</div>
+</nav> -->
+
+<!-- <nav class="navbar navbar-expand-lg mt-3 ">
+  <div class="container">
+    <img class=" logo-image" src="assets/images/logo.png" alt="">
+    <button class="navbar-toggler  bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " routerLink="home">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="movies">MOVIES</a>
+        </li>
+        <li>
+          <a class="nav-link"  routerLink="tv">TV</a>
+        </li>
+        <li>
+          <a class="nav-link" routerLink="people">PEOPLE</a>
+        </li>
+        <li>
+          <a class="nav-link mb-3" routerLink="contact">CONTACTS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg mt-3">
+  <div class="container">
+    <img class="logo-image" src="assets/images/logo.png" alt="">
+    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <!-- <a class="nav-link" routerLink="home" routerLinkActive="active">HOME</a> -->
+          <a class="nav-link" routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="movies" routerLinkActive="active">MOVIES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="tv" routerLinkActive="active">TV</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="people" routerLinkActive="active">PEOPLE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mb-3" routerLink="contact" routerLinkActive="active">CONTACTS</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
